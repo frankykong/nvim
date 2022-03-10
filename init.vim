@@ -8,11 +8,10 @@ set encoding=utf-8
 set fileencodings=ucs-bom,UTF-8,GBK,BIG5,latin1 
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
-
-" Visual
 set nocompatible      " 非兼容模式
 
-set mouse=a        " 使用鼠标 a/c
+" Visual
+set mouse=a           " 使用鼠标 a/c
 set fileformat=unix   " 换行使用unix方式 
 set number
 set title
@@ -29,9 +28,9 @@ endif
 set autoindent        " 自动缩进
 set smartindent       " 智能缩进
 set expandtab 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set backspace=2       " 退格键可以删除任何东西
 "set foldmarker={,}    " 缩进符号 
 "set foldmethod=indent " 缩进作为折叠标识  
@@ -61,6 +60,7 @@ set spell spelllang=en_us " 英语拼写检查
 set path+=**
 set wildignore+=*/node_modules/*
 
+
 " Highlights "{{{
 " ---------------------------------------------------------------------
 set cursorline
@@ -84,78 +84,29 @@ endif
 "}}}
 
 
-" Import Plugin "{{{
-" ======================================================================
-
-call plug#begin('~/AppData/Local/nvim/autoload/plugged')
-
-  "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
-
-if has("nvim")
- 
-  " for file manage
-  Plug 'kristijanhusak/defx-git'
-  Plug 'kristijanhusak/defx-icons'
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }         " 文件管理插件 
-  
-  " for telesocpe (file search)
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'                                      " telescope 依赖
-  Plug 'nvim-telescope/telescope.nvim'                              " 神级文件模糊搜索插件telescope
-  Plug 'hoob3rt/lualine.nvim'                                       " 状态栏
-
-  " for lsp
-  Plug 'neovim/nvim-lspconfig'                                      " 自动补全、语法检查
-  Plug 'hrsh7th/cmp-nvim-lsp'                                       " neovim 内置 LSP 客户端的 nvim-cmp 源
-  Plug 'hrsh7th/cmp-buffer'                                         " 从buffer中智能提示
-  Plug 'hrsh7th/cmp-path'                                           " 自动提示硬盘上的文件
-  Plug 'hrsh7th/nvim-cmp'                                           " A completion engine
-  Plug 'onsails/lspkind-nvim'                                       " 美化自动完成提示信息
-  Plug 'folke/lsp-colors.nvim'                                      " 配色方案
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }                " 基于neovim 内置lsp 的轻量级lsp 插件，具有高性能UI。非常酷
-  Plug 'L3MON4D3/LuaSnip'                                           " 代码段提示
-  Plug 'octaltree/cmp-look'                                         " 用于完成英语单词
-
-  " for treesitter
-  Plug 'windwp/nvim-autopairs'
-  Plug 'windwp/nvim-ts-autotag'
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }     " 通用高性能语法高亮插件
-  
-  " for coc(basic on nodejs server)
-  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'kevinoid/vim-jsonc'
-
-  " for other stuff
-  Plug 'dhruvasagar/vim-table-mode'                                 " An awesome automatic table creator
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}               " It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
-  Plug 'liuchengxu/vista.vim'                                       " 类似大纲功能
-  Plug 'luochen1990/rainbow'                                        " 彩虹括号
-  Plug 'preservim/nerdcommenter'                                    " commont tool
-  " theme plug
-  "Plug 'ayu-theme/ayu-vim'                                         " theme ayu
-  "Plug 'nocksock/bloop-vim'
-  "Plug 'k4yt3x/ayu-vim-darker'
-  "Plug '1612492/github.vim'
-  "Plug 'arzg/vim-colors-xcode'
-  Plug 'Mofiqul/vscode.nvim'
-
+" Imports "{{{
+" ---------------------------------------------------------------------
+runtime ./plug.vim
+if has("unix")
+  let s:uname = system("uname -s")
+  " Do Mac stuff
+  if s:uname == "Darwin\n"
+    " Description: macOS-specific configs
+    " Use OSX clipboard to copy and to paste
+    set clipboard+=unnamedplus
+    " Copy selected text in visual mode
+    "set clipboard+=autoselect
+  endif
 endif
-call plug#end()
+if has('win32')
+  " Use Windows clipboard to copy and to paste
+  set clipboard^=unnamed,unnamedplus
+endif
+
+runtime ./keymaps.vim
 "}}}
 
-" Some simple plugin config put in here "{{{
-" ---------------------------------------------------------------------------------------
-" nerd-commentator
-" 因为这个插件的配置需要比较高的加载级别，所以在init.vim文件中增加下面一行
-source ~/AppData/Local/nvim/after/plugin/rainbow.rc.vim
-let g:rainbow_active = 1
-"autocmd BufRead,BufNewFile *.mycjson set filetype=jsonc
-"}}}
-
-
+" Theme settings
 if exists("&termguicolors") && exists("&winblend")
   syntax enable                                                    " 开启语法高亮
   set termguicolors                                                " enable true colors support
@@ -217,7 +168,6 @@ if exists("&termguicolors") && exists("&winblend")
   " Disable nvim-tree background color 
   let g:vscode_disable_nvimtree_bg = v:true 
   colorscheme vscode
-  
 
 
 endif
@@ -246,58 +196,3 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 "}}}
 
 
-" Key map "{{{
-" ---------------------------------------------------------------------
-nnoremap <LEADER>e :NERDTreeToggle<CR>
-inoremap kj <esc>
-cnoremap kj <C-C>
-
-nnoremap <c-z> :u<CR>             " Avoid using this**
-inoremap <c-z> <c-o>:u<CR>
-
-xnoremap <Tab> >gv
-xnoremap <S-Tab> <gv
-
-" Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-nmap <Space> <C-w>w
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
-
-" Resize window
-"nmap <C-w><left> <C-w><
-"nmap <C-w><right> <C-w>>
-"nmap <C-w><up> <C-w>+
-"nmap <C-w><down> <C-w>-
-
-" Increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
-
-
-" Select all
-nmap <C-a> gg<S-v>G
-
-nmap <A-j> 5j
-nmap <A-k> 5k
-nmap q <C-q>
-"}}}
-
-" Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
