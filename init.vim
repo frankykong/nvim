@@ -287,6 +287,7 @@ nmap <C-a> gg<S-v>G
 
 nmap <A-j> 5j
 nmap <A-k> 5k
+nmap q <C-q>
 "}}}
 
 " Search for selected text, forwards or backwards.
