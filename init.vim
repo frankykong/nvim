@@ -133,7 +133,7 @@ if has("nvim")
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}               " It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
   Plug 'liuchengxu/vista.vim'                                       " 类似大纲功能
   Plug 'luochen1990/rainbow'                                        " 彩虹括号
- 
+  Plug 'preservim/nerdcommenter'                                    " commont tool
   " theme plug
   "Plug 'ayu-theme/ayu-vim'                                         " theme ayu
   "Plug 'nocksock/bloop-vim'
