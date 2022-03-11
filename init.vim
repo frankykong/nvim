@@ -28,9 +28,9 @@ endif
 set autoindent        " 自动缩进
 set smartindent       " 智能缩进
 set expandtab 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set backspace=2       " 退格键可以删除任何东西
 "set foldmarker={,}    " 缩进符号 
 "set foldmethod=indent " 缩进作为折叠标识  

@@ -45,17 +45,25 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }     " 通用高性能语法高亮插件
-  
+
+  " 需要tresitter支持
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " javascript 注释工具
+
   " for coc(basic on nodejs server)
   "Plug 'neoclide/coc.nvim', {'branch': 'release'}
   "Plug 'kevinoid/vim-jsonc'
 
   " for other stuff
   Plug 'dhruvasagar/vim-table-mode'                                 " An awesome automatic table creator
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}               " It's called vim-visual-multi in analogy with visual-block, but the plugin works mostly from normal mode.
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}               " 列修改多个同名字符 
   Plug 'liuchengxu/vista.vim'                                       " 类似大纲功能
   Plug 'luochen1990/rainbow'                                        " 彩虹括号
-  Plug 'preservim/nerdcommenter'                                    " commont tool
+  "Plug 'folke/which-key.nvim'                                       " displays a popup with possible key bindings
+  "Plug 'preservim/nerdcommenter'                                    " commont tool
+  
+  Plug 'leafOfTree/vim-matchtag'
+
+
   " theme plug
   "Plug 'ayu-theme/ayu-vim'                                         " theme ayu
   "Plug 'nocksock/bloop-vim'
@@ -70,10 +78,12 @@ call plug#end()
 
 " Some simple plugin config put in here "{{{
 " ---------------------------------------------------------------------------------------
-" nerd-commentator
+" nerd-commentatolet g:vim_jsx_pretty_colorful_config = 1 " default 0r
 " 因为这个插件的配置需要比较高的加载级别，所以在init.vim文件中增加下面一行
 source ~/AppData/Local/nvim/after/plugin/rainbow.rc.vim
 let g:rainbow_active = 1
 "autocmd BufRead,BufNewFile *.mycjson set filetype=jsonc
-"}}}
 
+" for leafOfTree/vim-matchtag
+let g:vim_matchtag_enable_by_default = 1
+let g:vim_matchtag_files = '*.html,*.xml,*.js,*.jsx,*.vue,*.svelte,*.jsp'

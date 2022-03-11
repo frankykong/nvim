@@ -40,6 +40,12 @@ nmap <C-a> gg<S-v>G
 nmap <A-j> 5j
 nmap <A-k> 5k
 nmap q <C-q>
+nmap <C-s> :w<CR>
+
+nmap <C-q> :q<CR>
+
+
+
 "}}}
 
 " Search for selected text, forwards or backwards.
