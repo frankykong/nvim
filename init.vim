@@ -46,6 +46,7 @@ set scrolloff=5       " 使光标距窗口上下保留 5 行
 set laststatus=2      " 窗口底部显示一个永久状态栏，可以显示文件名、行号和列号等内容
 
 " Miscellaneous
+set timeoutlen=300
 set notimeout
 set nobackup          " 禁止创建备份文件
 set noswapfile        " 禁止创建交换文件
@@ -85,7 +86,7 @@ endif
 
 
 " Imports "{{{
-" ---------------------------------------------------------------------
+" " ---------------------------------------------------------------------
 runtime ./plug.vim
 if has("unix")
   let s:uname = system("uname -s")
@@ -105,73 +106,6 @@ endif
 
 runtime ./keymaps.vim
 "}}}
-
-" Theme settings
-if exists("&termguicolors") && exists("&winblend")
-  syntax enable                                                    " 开启语法高亮
-  set termguicolors                                                " enable true colors support
-  "set winblend=0
-  "set wildoptions=pum
-  "set pumblend=5
-  "set background=dark
-
-  " theme NeoSolarized
-  "Use NeoSolarized
-  "let g:neosolarized_termtrans=1
-  "runtime ./colors/NeoSolarized.vim
-  "colorscheme NeoSolarized
-
-  " theme ayu
-  "let ayucolor="mirage"   " for dark version of theme
-  "colorscheme ayu
-
-  " theme ayu dark
-  "set termguicolors     " enable true colors support
-  "let ayucolor="light"  " for light version of theme
-  "let ayucolor="mirage" " for mirage version of theme
-  "let ayucolor="dark"   " for dark version of theme
-  "let ayucolor="darker" " for darker version of theme
-  "colorscheme ayu
-  "let g:indentLine_char = ''
-  "let g:indentLine_first_char = ''
-  "let g:indentLine_showFirstIndentLevel = 1
-  "let g:indentLine_setColors = 0
-
-  " theme bloop
-  "set termguicolors
-  "let g:bloop_use_italics = 0
-  "let g:bloop_use_italics = 0
-  "colorscheme bloop
-
-  "set colorscheme = 'github'
-
-  "colorscheme xcodedark
-  "colorscheme xcodedarkhc
-
-  "runtime ./colors/alduin.vim
-  "let g:alduin_Shout_Fire_Breath = 1
-  "let g:alduin_Shout_Become_Ethereal = 1
-  "let g:alduin_Shout_Aura_Whisper = 1
-  "colorscheme alduin
-
-
-  "runtime ./colors/kolor.vim
-  "colorscheme kolor
-
-  " Vim-Script:
-  " For dark theme
-  let g:vscode_style = "dark"
-  " Enable transparent background.
-  let g:vscode_transparency = 1
-  " Enable italic comment
-  let g:vscode_italic_comment = 1
-  " Disable nvim-tree background color 
-  let g:vscode_disable_nvimtree_bg = v:true 
-  colorscheme vscode
-
-
-endif
-
 
 " File types "{{{
 " ---------------------------------------------------------------------

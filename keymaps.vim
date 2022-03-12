@@ -1,7 +1,8 @@
 " Key map "{{{
+" :h key-notation
 " ---------------------------------------------------------------------
-nnoremap <LEADER>e :NERDTreeToggle<CR>
-inoremap kj <esc>
+let mapleader=" "
+inoremap kj <Esc>
 cnoremap kj <C-C>
 
 nnoremap <c-z> :u<CR>             " Avoid using this**
@@ -33,19 +34,40 @@ map sl <C-w>l
 nnoremap + <C-a>
 nnoremap - <C-x>
 
-
-" Select all
-nmap <C-a> gg<S-v>G
-
-nmap <A-j> 5j
-nmap <A-k> 5k
-nmap q <C-q>
-nmap <C-s> :w<CR>
-
+" Save and quite
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
 nmap <C-q> :q<CR>
+nnoremap q <C-q>
+nnoremap <C-q> :q<CR>
+map <C-c> yyp   
 
+" Movement
+nnoremap <A-h> b
+nnoremap <A-l> e
+nnoremap <A-j> 5j
+nnoremap <A-k> 5k
+nnoremap <C-h> <Home>
+nnoremap <C-l> <End>
+nnoremap <Enter> i<Enter><Esc>
+inoremap <A-j> <Down>
+inoremap <A-k> <Up>
+inoremap <A-h> <Left>
+inoremap <A-l> <Right>
+inoremap <C-h> <C-Left>
+inoremap <C-l> <C-Right>
+inoremap <C-k> <Home>
+inoremap <C-j> <End>
+" Select
+nnoremap v <S-v>
+nnoremap <S-v> v
+" Select all
+nnoremap <C-a> gg<S-v>G
+" Treesitter increment selection
 
+" thank you for you help
 
+nnoremap <leader>rv :source $MYVIMRC<CR>
 "}}}
 
 " Search for selected text, forwards or backwards.
