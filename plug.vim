@@ -106,40 +106,31 @@ let g:rainbow_active = 1
 " ---------------------------------------------------------------------------------------
 if exists("&termguicolors") && exists("&winblend")
   syntax enable                                                    " 开启语法高亮
-  set termguicolors                                                " enable true colors support
   " checks if your terminal has 24-bit color support
-  if (has("termguicolors"))
-      set termguicolors
-      hi LineNr ctermbg=NONE guibg=NONE
-  endif
-  "set winblend=0
-  "set wildoptions=pum
-  "set pumblend=5
-  "set background=dark
-
-  " theme NeoSolarized
-  "Use NeoSolarized
-  "let g:neosolarized_termtrans=1
-  "runtime ./colors/NeoSolarized.vim
-  "colorscheme NeoSolarized
+  set termguicolors
+  " set winblend=0
+  " set wildoptions=puv
+  " set pumblend=5
+  " set background=dark
+  " " Use NeoSolarized
+  " let g:neosolarized_termtrans=1
+  " runtime ./colors/NeoSolarized.vim
+  " colorscheme NeoSolarized
 
 
   " Vim-Script:
-  " let g:vscode_style = "dark"
+  " let g:vscode_style = "darkv
   " let g:vscode_transparency = 1
   " let g:vscode_italic_comment = 1
   " let g:vscode_disable_nvimtree_bg = v:true ristretto
   " colorscheme vscode
   
   " monokai support jsx  monokai, monokai_pro, monokai_soda, monokai_ristretto
-  " colorscheme monokai
+  colorscheme monokai
 
   " configure nvcode-color-schemes
   " let g:nvcode_termcolors=256
   " colorscheme nvcode " Or onedark nord aurora gruvbox palenight snazzy xoria 
-
-
-
 
 
 endif
@@ -161,10 +152,10 @@ require('monokai').setup {
         white = '#b8bfb8',
         grey = '#8F908A',
         black = '#000000',
-        pink = '#5265e3',
+        pink = '#C285BF',
         green = '#96c930',
-        aqua = '#66d9ef',
-        yellow = '#d4c96e',
+        aqua = '#A4DCFE',
+        yellow = '#CA9178',
         orange = '#fd971f',
         purple = '#ae81ff',
         red = '#e95678',
