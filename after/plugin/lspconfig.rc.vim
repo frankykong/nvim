@@ -96,9 +96,10 @@ nvim_lsp.flow.setup {
   capabilities = capabilities
 }
 
+-- if filetypes include javascript, reesittert will cause jsx indent problem!
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript",  },
   capabilities = capabilities
 }
 

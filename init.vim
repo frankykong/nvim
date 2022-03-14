@@ -9,7 +9,7 @@ set fileencodings=ucs-bom,UTF-8,GBK,BIG5,latin1
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 set nocompatible      " 非兼容模式
-
+syntax enable
 " Visual
 set mouse=a           " 使用鼠标 a/c
 set fileformat=unix   " 换行使用unix方式 
@@ -19,19 +19,21 @@ set showmatch         " 高亮标识匹配的括号
 set background=dark
 set showcmd           " 在状态栏显示命令  
 "set cmdheight=1
-set nowrap "No Wrap lines " No Wrap lines
 if has('nvim')
   set inccommand=split  " 
 endif
 
 " Indentation & Tabs
+filetype plugin indent on
 set autoindent        " 自动缩进
 set smartindent       " 智能缩进
 set expandtab 
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
-set backspace=2       " 退格键可以删除任何东西
+set backspace=start,eol,indent
+set nowrap "No Wrap lines " No Wrap lines
+" set softtabstop=2
+" set backspace=2       " 退格键可以删除任何东西
 "set foldmarker={,}    " 缩进符号 
 "set foldmethod=indent " 缩进作为折叠标识  
 set smarttab          " Be smart when using tabs ;)
@@ -46,10 +48,11 @@ set scrolloff=5       " 使光标距窗口上下保留 5 行
 set laststatus=2      " 窗口底部显示一个永久状态栏，可以显示文件名、行号和列号等内容
 
 " Miscellaneous
-set timeoutlen=300
+set timeoutlen=100
 set notimeout
 set nobackup          " 禁止创建备份文件
 set noswapfile        " 禁止创建交换文件
+set shell=powershell
 "set autochdir         " 将工作目录自动切换到正在编辑的文件
 set lazyredraw        " 延迟重绘增加效率
 set formatoptions+=r  " Add asterisks in block comments

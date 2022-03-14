@@ -28,7 +28,6 @@ if has("nvim")
   Plug 'neovim/nvim-lspconfig'                                      " 自动补全、语法检查
   Plug 'hrsh7th/cmp-nvim-lsp'                                       " 内置 LSP 客户端的 nvim-cmp 源
   Plug 'hrsh7th/cmp-buffer'                                         " 从buffer中智能提示
-  Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " 添加jsx注释语法
   Plug 'hrsh7th/cmp-path'                                           " 自动提示硬盘上的文件
   Plug 'hrsh7th/nvim-cmp'                                           " 官方LSP核心
   Plug 'L3MON4D3/LuaSnip'                                           " 代码段提示
@@ -47,10 +46,10 @@ if has("nvim")
   " http.sslcainfo地址要与git安装地址的cert.pem文件一致
   " 如果scoop安装的gcc出现Error during compilation报错，
   " 请尝试 choco install mingw，这个编译库非常全
-  " Plug 'windwp/nvim-autopairs'
-  " Plug 'windwp/nvim-ts-autotag'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }     " 通用高性能语法高亮插件
-  " Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " 添加jsx注释语法
+  Plug 'windwp/nvim-autopairs'
+  Plug 'windwp/nvim-ts-autotag'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " 添加jsx注释语法
   "--}}
 
   " for other stuff
@@ -69,11 +68,9 @@ if has("nvim")
   " Plug 'ful1e5/onedark.nvim'
   
 
-
 endif
 call plug#end()
 "}}}
-
 
 
 " Example config in VimScript
