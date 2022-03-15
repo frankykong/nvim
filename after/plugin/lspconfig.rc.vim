@@ -163,6 +163,12 @@ nvim_lsp.diagnosticls.setup {
   }
 }
 
+nvim_lsp.intelephense.setup {
+    on_attach = on_attach,
+    filetypes = { "php" },
+    capabilities = capabilities
+}
+
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
