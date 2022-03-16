@@ -8,9 +8,6 @@ cnoremap kj <C-C>
 nnoremap <c-z> :u<CR>             " Avoid using this**
 inoremap <c-z> <c-o>:u<CR>
 
-xnoremap <Tab> >gv
-xnoremap <S-Tab> <gv
-
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
@@ -54,10 +51,15 @@ inoremap <A-j> <Down>
 inoremap <A-k> <Up>
 inoremap <A-h> <Left>
 inoremap <A-l> <Right>
-inoremap <C-h> <C-Left>
+" inoremap <C-h> <C-Left>
 inoremap <C-l> <C-Right>
 inoremap <C-k> <Home>
 inoremap <C-j> <End>
+
+" Indent 
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
+nnoremap <Bs> <S-j>
 " Select
 nnoremap v <S-v>
 nnoremap <S-v> v
