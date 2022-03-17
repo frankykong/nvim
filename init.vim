@@ -6,6 +6,7 @@ autocmd!
 " set script encoding
 set encoding=utf-8
 set fileencodings=ucs-bom,UTF-8,GBK,BIG5,latin1 
+set fileformat=unix
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 set nocompatible      " 非兼容模式
