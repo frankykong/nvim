@@ -42,12 +42,32 @@ lua <<EOF
       --   end
       -- end, { "i", "s" }),
     },
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name= 'luasnip' },
-    }, {
-      { name = 'buffer' },
-    }),
+
+    sources = {
+
+      -- Youtube: Could enable this only for lua, but nvim_lua handles that already.
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "buffer", keyword_length = 3 },
+      {
+        name = 'look',
+        keyword_length = 2,
+        option = {
+            convert_case = true,
+            loud = true
+            --dict = '/usr/share/dict/words'
+        }
+      }
+    },
+
+    -- sources = cmp.config.sources({
+    --   { name = 'nvim_lsp' },
+    --   { name = 'luasnip' },
+    -- }, {
+    --   { name = 'buffer' },
+    --   { name = 'look', keyword_length = 2 },
+    -- }),
+
     formatting = {
       format = lspkind.cmp_format({with_text = false, maxwidth = 50})
     }

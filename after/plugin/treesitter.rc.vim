@@ -2,6 +2,8 @@ if !exists('g:loaded_nvim_treesitter')
   echom "Not loaded treesitter"
   finish
 endif
+
+
 lua <<EOF
 
 require'nvim-treesitter.configs'.setup {
@@ -52,7 +54,58 @@ require'nvim-treesitter.configs'.setup {
       scope_incremental = "grc",
       node_decremental = "grm"
     }
-  }
+  },
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["<leader>fo"] = "@function.outer",
+        ["<leader>fi"] = "@function.inner",
+        ["<leader>co"] = "@class.outer",
+        ["<leader>ci"] = "@class.inner",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>po"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>pi"] = "@parameter.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+  },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

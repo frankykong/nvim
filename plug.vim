@@ -21,6 +21,8 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'                                      " telescope 依赖
   Plug 'nvim-telescope/telescope.nvim'                              " 神级文件模糊搜索插件telescope
   Plug 'hoob3rt/lualine.nvim'                                       " 状态栏
+  " Plug 'akinsho/toggleterm.nvim'
+
   "--}}
 
   "{{-- Language server system 
@@ -50,16 +52,19 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " 添加jsx注释语法
+  Plug 'p00f/nvim-ts-rainbow'
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   "--}}
 
   " for other stuff
   Plug 'dhruvasagar/vim-table-mode'                                 " table creator
   Plug 'mg979/vim-visual-multi'                                     " 列修改多个同名字符 
   Plug 'liuchengxu/vista.vim'                                       " 类似大纲功能
-  Plug 'luochen1990/rainbow'                                        " 彩虹括号
+  " Plug 'luochen1990/rainbow'                                        " 彩虹括号
   Plug 'tpope/vim-commentary'                                       " 注释工具 
   
   Plug 'leafOfTree/vim-matchtag'                                    " 匹配标签高亮
+  Plug 'lewis6991/spellsitter.nvim'
 
   " theme plug
   " Plug 'Mofiqul/vscode.nvim'
@@ -94,10 +99,6 @@ call plug#end()
 " Some simple plugin config put in here "{{{
 " ---------------------------------------------------------------------------------------
 " nerd-commentatolet g:vim_jsx_pretty_colorful_config = 1 " default 0r
-" 因为这个插件的配置需要比较高的加载级别，所以在init.vim文件中增加下面一行
-source ~/AppData/Local/nvim/after/plugin/rainbow.rc.vim
-let g:rainbow_active = 1
-"autocmd BufRead,BufNewFile *.mycjson set filetype=jsonc
 
 " Theme settings {{{ https://github.com/nvim-treesitter/nvim-treesitter/wiki/Colorschemes
 " ---------------------------------------------------------------------------------------

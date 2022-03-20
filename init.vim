@@ -49,7 +49,7 @@ set scrolloff=5       " 使光标距窗口上下保留 5 行
 set laststatus=2      " 窗口底部显示一个永久状态栏，可以显示文件名、行号和列号等内容
 
 " Miscellaneous
-set timeoutlen=100
+set timeoutlen=500
 set notimeout
 set nobackup          " 禁止创建备份文件
 set noswapfile        " 禁止创建交换文件
@@ -58,9 +58,10 @@ set shell=powershell
 set lazyredraw        " 延迟重绘增加效率
 set formatoptions+=r  " Add asterisks in block comments
 
-" Spell
-set spell spelllang=en_us " 英语拼写检查
-
+" If the name “cjk” is included, East Asian characters are excluded from spell checking.
+" This is useful when editing text that also has Asian words.
+set spell spelllang=en,cjk " 英语拼写检查
+set spellsuggest=best,9
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
