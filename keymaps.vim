@@ -51,7 +51,7 @@ inoremap <A-j> <Down>
 inoremap <A-k> <Up>
 inoremap <A-h> <Left>
 inoremap <A-l> <Right>
-" inoremap <C-h> <C-Left>
+inoremap <C-h> <C-Left>
 inoremap <C-l> <C-Right>
 inoremap <C-k> <Home>
 inoremap <C-j> <End>
