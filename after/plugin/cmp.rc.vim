@@ -4,7 +4,36 @@ set completeopt=menuone,noinsert,noselect
 
 lua <<EOF
   local cmp = require'cmp'
-  local lspkind = require'lspkind'
+  -- local lspkind = require'lspkind'
+
+  --   פּ ﯟ   some other good icons
+  local kind_icons = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "ﰠ",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "塞",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "פּ",
+    Event = "",
+    Operator = "",
+    TypeParameter = ""
+  }
 
   cmp.setup({
     snippet = {
@@ -44,20 +73,21 @@ lua <<EOF
     },
 
     sources = {
-
       -- Youtube: Could enable this only for lua, but nvim_lua handles that already.
       { name = "nvim_lsp" },
       { name = "luasnip" },
       { name = "buffer", keyword_length = 3 },
-      {
-        name = 'look',
-        keyword_length = 2,
-        option = {
-            convert_case = true,
-            loud = true
-            --dict = '/usr/share/dict/words'
-        }
-      }
+      { name = "treesitter" },
+      { name = "path" },
+      --{
+      --  name = 'look',
+      --  keyword_length = 2,
+      --  option = {
+      --      convert_case = true,
+      --      loud = true
+      --      --dict = '/usr/share/dict/words'
+      --  }
+      --},
     },
 
     -- sources = cmp.config.sources({
@@ -68,11 +98,30 @@ lua <<EOF
     --   { name = 'look', keyword_length = 2 },
     -- }),
 
+    -- formatting = {
+    --   fields = {"kind", "abbr", "menu"},
+    --   format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    -- },
+
+
     formatting = {
-      format = lspkind.cmp_format({with_text = false, maxwidth = 50})
-    }
+      fields = {"kind", "abbr", "menu"},
+      format = function(entry, vim_item)
+        -- Kind icons
+        vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+        -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        vim_item.menu = ({
+          nvim_lsp = "[LSP]",
+          luasnip = "[Snippet]",
+          buffer = "[Buffer]",
+          path = "[Path]",
+        })[entry.source.name]
+        return vim_item
+      end,
+    },
+
   })
 
-  vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
+  -- vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
 EOF
 

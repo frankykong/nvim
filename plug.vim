@@ -3,7 +3,6 @@
 
 call plug#begin('~/AppData/Local/nvim/autoload/plugged')
 
-  "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
 
@@ -22,7 +21,6 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'                              " 神级文件模糊搜索插件telescope
   Plug 'hoob3rt/lualine.nvim'                                       " 状态栏
   " Plug 'akinsho/toggleterm.nvim'
-
   "--}}
 
   "{{-- Language server system 
@@ -33,12 +31,13 @@ if has("nvim")
   Plug 'hrsh7th/cmp-path'                                           " 自动提示硬盘上的文件
   Plug 'hrsh7th/nvim-cmp'                                           " 官方LSP核心
   Plug 'L3MON4D3/LuaSnip'                                           " 代码段提示
+  Plug 'ray-x/cmp-treesitter'
   
   " 基于CMP增强插件
   Plug 'onsails/lspkind-nvim'                                       " 美化自动完成提示信息
   Plug 'folke/lsp-colors.nvim'                                      " 配色方案
   Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }                " 基于neovim 内置lsp 的轻量级lsp 插件，具有高性能UI。非常酷
-  Plug 'octaltree/cmp-look'                                         " 用于完成英语单词
+  " Plug 'octaltree/cmp-look'                                         " 用于完成英语单词
   "--}}
 
   "{{-- Syntax system 
@@ -65,6 +64,8 @@ if has("nvim")
   
   Plug 'leafOfTree/vim-matchtag'                                    " 匹配标签高亮
   Plug 'lewis6991/spellsitter.nvim'
+
+  Plug 'kamykn/spelunker.vim'
 
   " theme plug
   " Plug 'Mofiqul/vscode.nvim'
