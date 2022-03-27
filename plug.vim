@@ -20,6 +20,8 @@ if has("nvim")
   Plug 'nvim-lua/plenary.nvim'                                      " telescope 依赖
   Plug 'nvim-telescope/telescope.nvim'                              " 神级文件模糊搜索插件telescope
   Plug 'hoob3rt/lualine.nvim'                                       " 状态栏
+  Plug 'goolord/alpha-nvim'                                         " 欢迎界面
+  Plug 'ahmedkhalf/project.nvim'
   " Plug 'akinsho/toggleterm.nvim'
   "--}}
 
@@ -65,7 +67,9 @@ if has("nvim")
   Plug 'leafOfTree/vim-matchtag'                                    " 匹配标签高亮
   Plug 'lewis6991/spellsitter.nvim'
 
-  Plug 'kamykn/spelunker.vim'
+  Plug 'kamykn/spelunker.vim'                                       " 拼写检查
+  Plug 'lukas-reineke/indent-blankline.nvim'                        " 显示对齐竖线
+  Plug 'antoinemadec/FixCursorHold.nvim'
 
   " theme plug
   " Plug 'Mofiqul/vscode.nvim'
@@ -100,7 +104,7 @@ call plug#end()
 " Some simple plugin config put in here "{{{
 " ---------------------------------------------------------------------------------------
 " nerd-commentatolet g:vim_jsx_pretty_colorful_config = 1 " default 0r
-
+let g:cursorhold_updatetime = 100
 " Theme settings {{{ https://github.com/nvim-treesitter/nvim-treesitter/wiki/Colorschemes
 " ---------------------------------------------------------------------------------------
 if exists("&termguicolors") && exists("&winblend")

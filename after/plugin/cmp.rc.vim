@@ -80,7 +80,7 @@ lua <<EOF
       { name = "treesitter" },
       { name = "path" },
       --{
-      --  name = 'look',
+      --  name = 'look'
       --  keyword_length = 2,
       --  option = {
       --      convert_case = true,

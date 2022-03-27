@@ -59,9 +59,8 @@ set formatoptions+=r  " Add asterisks in block comments
 
 " If the name “cjk” is included, East Asian characters are excluded from spell checking.
 " This is useful when editing text that also has Asian words.
-" set spell
+set spell
 set spelllang=en_us " 英语拼写检查
-set nospell
 
 " Finding files - Search down into subfolders
 set path+=**
