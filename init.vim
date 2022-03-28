@@ -13,7 +13,6 @@ set nocompatible      " 非兼容模式
 syntax enable
 " Visual
 set mouse=a           " 使用鼠标 a/c
-set fileformat=unix   " 换行使用unix方式 
 set number
 set title
 set showmatch         " 高亮标识匹配的括号
@@ -89,7 +88,7 @@ endif
 
 "}}}
 
-
+au BufRead * set fileformat=unix   " 换行使用unix方式 
 " Imports "{{{
 " " ---------------------------------------------------------------------
 runtime ./plug.vim
