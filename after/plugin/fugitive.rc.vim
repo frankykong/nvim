@@ -1,4 +1,6 @@
 " Status line
+if !exists('g:loaded_fugitive') | finish | endif
+
 if !exists('*fugitive#statusline')
   set statusline=%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}[L%l/%L,C%03v]
   set statusline+=%=
