@@ -55,6 +55,8 @@ if has("nvim")
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'                " 添加jsx注释语法
   Plug 'p00f/nvim-ts-rainbow'
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+  Plug 'nvim-treesitter/playground'
+  Plug 'nvim-treesitter/nvim-treesitter-refactor'
   "--}}
 
   " for other stuff

@@ -2,8 +2,8 @@
 " :h key-notation
 " ---------------------------------------------------------------------
 let mapleader=" "
-inoremap kj <Esc>
-cnoremap kj <C-C>
+" inoremap kj <Esc>
+" cnoremap kj <C-C>
 
 nnoremap <c-z> :u<CR>             " Avoid using this**
 inoremap <c-z> <c-o>:u<CR>
