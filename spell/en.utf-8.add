@@ -5,3 +5,5 @@ https
 redux
 Pressable
 Actionsheet
+setFavorited
+favorited
