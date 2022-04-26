@@ -72,6 +72,7 @@ if has("nvim")
   Plug 'kamykn/spelunker.vim'                                       " 拼写检查
   Plug 'lukas-reineke/indent-blankline.nvim'                        " 显示对齐竖线
   Plug 'antoinemadec/FixCursorHold.nvim'
+  Plug 'simrat39/symbols-outline.nvim'                              " :SymbolsOutline
 
   " theme plug
   " Plug 'Mofiqul/vscode.nvim'
