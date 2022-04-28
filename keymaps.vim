@@ -43,7 +43,9 @@ map <C-c> yyp
 nnoremap <A-h> b
 nnoremap <A-l> e
 nnoremap <A-j> 5j
+vnoremap <A-j> 5j
 nnoremap <A-k> 5k
+vnoremap <A-k> 5k
 nnoremap <C-h> <Home>
 nnoremap <C-l> <End>
 nnoremap <Enter> i<Enter><Esc>

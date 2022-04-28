@@ -7,3 +7,15 @@ Pressable
 Actionsheet
 setFavorited
 favorited
+params
+param
+ManagerRegistry
+managerRegistry
+ExceptionInterface
+CommentRepository
+commentRepository
+CourseRepository
+ChannelRepository
+channelRepository
+courseRepository
+Replys

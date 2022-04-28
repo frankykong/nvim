@@ -60,8 +60,8 @@ set formatoptions+=r  " Add asterisks in block comments
 " If the name “cjk” is included, East Asian characters are excluded from spell checking.
 " This is useful when editing text that also has Asian words.
 set spell
-set spelllang=en_us " 英语拼写检查
-
+set spelllang=en,cjk " 英语拼写检查
+let g:tex_comment_nospell=1
 " Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
@@ -134,4 +134,5 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 "}}}
 
-
+" Set difference Indentation by file type.
+autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
