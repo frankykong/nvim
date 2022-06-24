@@ -19,3 +19,17 @@ ChannelRepository
 channelRepository
 courseRepository
 Replys
+SettingRepository
+EntityManagerInterface
+settingRepository
+entityManager
+FavoriteRepository
+CourseLessonRepository
+favoriteRepository
+courseLessonRepository
+todo
+UploadedFile
+coverimgFile
+FormControl
+Swiper
+fullscreen

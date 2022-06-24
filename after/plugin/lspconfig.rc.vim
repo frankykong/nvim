@@ -156,6 +156,8 @@ nvim_lsp.diagnosticls.setup {
     },
     formatFiletypes = {
       css = 'prettier',
+      html = 'prettier',
+      twig = 'prettier',
       javascript = 'prettier',
       javascriptreact = 'prettier',
       json = 'prettier',

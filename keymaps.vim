@@ -57,14 +57,9 @@ inoremap <C-h> <C-Left>
 inoremap <C-l> <C-Right>
 inoremap <C-k> <Home>
 inoremap <C-j> <End>
-
-" Indent 
-xnoremap <Tab> >gv
-xnoremap <S-Tab> <gv
-nnoremap <Bs> <S-j>
-" Select
-nnoremap v <S-v>
-nnoremap <S-v> v
+" Indent xnoremap <Tab> >gv xnoremap <S-Tab> <gv nnoremap <Bs> <S-j> Select
+" nnoremap v <S-v>
+" nnoremap <S-v> v
 " Select all
 nnoremap <C-a> gg<S-v>G
 " Treesitter increment selection
